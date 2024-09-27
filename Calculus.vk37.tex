@@ -1,0 +1,261 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{cancel}
+\usepackage{scalerel}
+\usepgfplotslibrary{fillbetween}
+\usepackage{comment}
+
+\setlength{\headheight}{50pt}
+\addtolength{\topmargin}{-29.68335pt}
+\pgfplotsset{
+    compat=1.18,
+    standard/.style={
+    font=\tiny,
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    enlarge x limits=0.00005,
+    enlarge y limits=0.00005,
+    every axis x label/.style={at={(ticklabel* cs:1.05)},anchor=north west},
+    every axis y label/.style={at={(ticklabel* cs:1.05)},anchor=south east}
+    }
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\author{Kalle Alkula}
+\title{Calculus.vk37}
+\date\today
+\fancyhf{}
+\rhead{
+    PINFOSS 22\\
+    Kalle.alkula@turkuamk.fi
+}
+\rfoot{page \thepage}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+    \paragraph*{9.}
+        \textit{
+            Funkiton g(x) määritellään asettamalla
+        }
+    \begin{equation*}
+        g(x) =
+        \begin{cases}
+            x^2 -2, x <0\\
+            3x + b, x\geq 0
+        \end{cases}.
+    \end{equation*}
+    \textit{
+        Millä parametrin b arvolla funktio on jatkuva pisteessä x = 0? piirrä tätä arvoa vastaava funkiton kuvaaja.
+    }
+    \\
+    \begin{equation*}
+        \begin{split}
+            \lim_{x \rightarrow 0-} &=~x^2 -2\\
+            &=~0^2-2\\
+            &=~-2\\
+            &=~b = -2\\
+            \\
+            \lim_{x \rightarrow 0+} &=~3x + b \\
+            &=~3(0)+ (-2)\\
+            &=~ -2 \\\\
+            g(x) &= 
+        \begin{cases}
+            x^2 -2, x <0\\
+            \cancel{3x + b, x\geq 0}\\
+        \end{cases}
+        \end{split}
+    \end{equation*}
+    \\
+    \begin{align*}
+    \begin{tikzpicture}[scale=2]
+        \begin{axis}[standard,
+            xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+            ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+            samples=1000,
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-5.1,xmax=5.1,
+            ymin=-5.1,ymax=5.1,
+        ]
+        \addplot[axis line style = regular, red]
+        {x^2 -2};
+        \end{axis}
+    \end{tikzpicture}
+    \end{align*}
+    \newpage
+    \paragraph*{10.}
+        \textit{
+        Funkiton h(x) määritellään
+        }
+        \begin{equation*}
+            \begin{cases}
+                h(x)= x+ 1,\neq 0\\
+                h(0)= 2
+            \end{cases}
+        \end{equation*}
+        \textit{
+            Onko funktiolla epäjatkuvuuskohtia? piirrä kuvaaja.
+        }
+        \medskip
+        \begin{align*}
+            \begin{tikzpicture}[scale=1.2]
+                \begin{axis}[standard,
+                    xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+                    ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+                    samples=1000,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xmin=-5.1,xmax=5.1,
+                    ymin=-5.1,ymax=5.1,
+                ]
+                \addplot[axis line style = regular, red]
+                {2};
+                \addplot[axis line style = regular, blue]
+                {x + 1};
+                \end{axis}
+            \end{tikzpicture}
+            \end{align*}
+            on jatkuva pisteessä x= 1
+    \newpage
+    \paragraph*{101.}
+            \textit{
+            Tutki Jatkuvuutta.
+            }
+            \begin{equation*}
+                \begin{split}
+                \begin{cases}
+                    2x + 3,&~x< -2\\
+                    -1,&~x= 2\\
+                    \frac{1}{2}x,&~x> -2
+                \end{cases}
+                \end{split}
+            \end{equation*}
+            \\
+            \begin{tikzpicture}[scale=1.5]
+                    \begin{axis}[standard,
+                        xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+                        ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+                        samples=1000,
+                        xlabel={$x$},
+                        ylabel={$y$},
+                        xmin=-5.1,xmax=5.1,
+                        ymin=-5.1,ymax=5.1,
+                    ]
+                    \addplot[axis line style = regular, red]
+                    {2*x+3};
+                    \addplot[axis line style = regular, blue]
+                    {-1};
+                    \addplot[axis line style = regular, blue]
+                    {0.5*x};
+                    \end{axis}
+                \end{tikzpicture}
+                \\
+                on jatkuva pisteessä x= -2
+    \newpage
+    \paragraph*{15.}
+    \textit{
+        Derivoi seuraava funktio\\
+    }
+    \textbf{a)}
+    \begin{equation*}
+    \begin{split}
+        f(x)&=-6\\
+        f'(x)&=D-6\\
+        f'(x)&= 0\\
+    \end{split}
+    \end{equation*}
+    \\
+    \textbf{b)}
+    \begin{equation*}
+    \begin{split}
+        h(x)&=x^{100}\\
+        h'(x)&=Dx^{100}\\
+        h'(x)&=100x^{100-1}\\
+        h'(x)&=100x^{99}\\
+    \end{split}
+    \end{equation*}
+    \\
+    \textbf{c)}
+    \begin{equation*}
+    \begin{split}
+        g(x)&= \frac{1}{x^3}\\
+        g'(x)&= Dx^{-3}\\
+        g'(x)&= -3x^{-3-1}\\
+        g'(x)&= -3x^{-4}\\
+    \end{split}
+    \end{equation*}
+    \\
+    \textbf{d)}
+    \begin{equation*}
+    \begin{split}
+        f(t)&= \frac{1}{\sqrt{t}}\\
+        f'(t)&= \sqrt{t}^{-1}\\
+        f'(t)&= \frac{1}{2}t^{-\frac{1}{2}-1}\\
+        f'(t)&= \frac{1}{2}t^{-\frac{3}{2}}\\
+    \end{split}
+    \end{equation*}
+\newpage
+\paragraph*{16.}
+    \textit{
+        määritä ja sievennä derivaatan f'(x) lauseke kun,
+    }
+    \\
+    \textbf{a)}
+    \begin{equation*}
+        \begin{split}
+            f(x)&=rx^3\\
+            f'(x)&=Drx^3\\
+            f'(x)&=3rx^2\\
+        \end{split}
+    \end{equation*}
+    \textbf{b)}
+    \begin{equation*}
+        \begin{split}
+            f(x)&=\frac{2}{x^4}\\
+            f'(x)&=D\frac{2}{x^4}\\
+            f'(x)&=-\frac{2\times 4}{x^{4-1+2}}\\
+            f'(x)&=-\frac{8}{x^{5}}\\
+        \end{split}
+    \end{equation*}
+    !!!sain laskettua mutta en ymmärrä täysin!!!\\\
+    \textbf{c)}
+    \begin{equation*}
+        \begin{split}
+            f(x)&=2x^4-6x^2+2x-4\\
+            f'(x)&=2x^4-6x^2+2x-4\\
+            f'(x)&=D(2x^4)D(-6x^2)D(+2x)D(-4)\\
+            f'(x)&=8x^3-12x+2+0\\
+            f'(x)&=8x^3-12x+2\\
+        \end{split}
+    \end{equation*}
+    \textbf{d)}
+    \begin{equation*}
+        \begin{split}
+            f(x)&=\frac{-4x^2-6x+2}{x^2}\\
+            f'(x)&=\frac{D(-4x^2-6x+2)x^2-(-4x^2-6x+2)Dx^2}{(x^2)^2}\\
+            \frac{f'(x)}{g'(x)}&=\frac{(-8x-6+2)x^2-(-4x^2-6x+2)2x}{(x^2)^2}\\
+            \frac{f'(x)}{g'(x)}&=-\frac{2(-3x+2)}{x^3}
+        \end{split}
+    \end{equation*}
+    hirvee taistelu välivaiheissa
+    \newpage
+    \paragraph*{17.}
+    \begin{equation*}
+        \begin{split}
+            f(x)&=
+        \end{split}
+    \end{equation*}
+
+
+\end{document}
